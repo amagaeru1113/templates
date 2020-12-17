@@ -1,0 +1,17 @@
+version: '3'
+services:
+  room:
+    container_name: laboratory
+    build:
+      context: ""
+      dockerfile: Dockerfile
+    user: root
+    volumes:
+      - ./:/lab
+    working_dir: /lab
+    restart: always
+    ports:
+      - "8888:8888" # jupyter lab
+      - "5000:5000" # mlflow ui
+      - "4141:4141" # kedro viz
+    tty: true
