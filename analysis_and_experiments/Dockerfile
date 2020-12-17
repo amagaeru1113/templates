@@ -12,7 +12,7 @@ WORKDIR /lab
 COPY poetry.lock pyproject.toml ./
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git wget tree libxml2 \
+    && apt-get install -y --no-install-recommends git wget tree vim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
